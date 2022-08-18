@@ -1,4 +1,4 @@
-# _Project Name_
+# _Pierre's Pastries_
 
 #### By _Zachary Waggoner_
 
@@ -34,39 +34,39 @@ _This is a detailed description of your application. Give as much detail as need
 <details>
 <summary><strong>Initial Setup</strong></summary>  
 
-1. Copy the git repository url: https://github.com/CyndaZ42/ProjectName  
+1. Copy the git repository url: https://github.com/CyndaZ42/Pierres-Pastries  
 2. Open a shell program and navigate to your desktop.
 3. Clone the repository for this project using the `git clone` command and including the copied URL.
-4. While still in the shell program, navigate to the root directory of the newly created file named `ProjectName.Solution`.
-5. From the root directory, navigate to the `ProjectName` directory.
+4. While still in the shell program, navigate to the root directory of the newly created file named `Pastries.Solution`.
+5. From the root directory, navigate to the `Pastries` directory.
 6. Move onto SQL Workbench instructions below to re-create database necessary to run this project.
 </details>
 
 <details>
 <summary><strong>SQL Workbench Configuration</strong></summary>
 
-1. Create an `appsetting.json` file in the `ProjectName` directory of the project  
-   <pre>ProjectName.Solution
-   └── ProjectName
-    └── <strong>appsetting.json</strong></pre>
+1. Create an <font color="green">`appsettings.json`</font> file in the `Pastries` directory of the project  
+   <pre>Pastries.Solution
+   └── Pastries
+    └── <strong><font color="yellow">appsetting.json</font></strong></pre>
 2. Insert the following code [^1]  
     ```json
     {
       "ConnectionStrings": {
-        "DefaultConnection": "Server=localhost;Port=3306;database=project_name;uid=root;pwd=[YOUR-PASSWORD-HERE];"
+        "DefaultConnection": "Server=localhost;Port=3306;database=pastries;uid=root;pwd=[YOUR-PASSWORD-HERE];"
       }
     }
     ```
 
-3. Once `appsettings.json` file has been created, navigate back to SQL Workbench.
+3. Once <font color="green">`appsettings.json`</font> file has been created, navigate back to SQL Workbench.
 </details>
 
 <details>
 <summary><strong>To Run</strong></summary>
 
 1. Navigate to:  
-   <pre>ProjectName.Solution
-   └── <strong>ProjectName</strong></pre>
+   <pre>Pastries.Solution
+   └── <strong><font color="yellow">Pastries</font></strong></pre>
 
 2. Run `$ dotnet restore` in the console.  
 3. Run `$ dotnet database update` in the console.  
@@ -77,9 +77,9 @@ _This is a detailed description of your application. Give as much detail as need
 <summary><strong>For Testing</strong></summary>
 
 1. Navigate to  
-    <pre>ProjectName.Solution
-    ├── ProjectName
-    └── <strong>ProjectName.Tests</strong></pre>
+    <pre>Pastries.Solution
+    ├── Pastries
+    └── <strong><font color="yellow">Pastries.Tests</font></strong></pre>
 
 2. Run `$ dotnet test` in the console
 </details><br>
@@ -103,4 +103,3 @@ _Feel free to reach out via [Github](https://github.com/CyndaZ42) to provide fee
 ### Footnotes
 
 [^1]: You must include your password in the code block section labeled `YOUR-PASSWORD-HERE`.
-
