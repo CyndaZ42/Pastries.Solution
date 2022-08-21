@@ -1,14 +1,14 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace ProjectName.Models
+namespace Pastries.Models
 {
-  public class ProjectNameContext : DbContext
+  public class PastriesContext : DbContext
   {
-    public DbSet<CLassOne> ClassOnes { get; set; }
-    public DbSet<ClassTwo> ClassTwos { get; set; }
-    public DbSet<ClassOneClassTwo> ClassOneClassTwo { get;  set; }
+    public DbSet<Flavor> Flavors { get; set; }
+    public DbSet<Treat> Treats { get; set; }
+    public DbSet<FlavorTreat> FlavorTreat { get;  set; }
 
-    public ProjectNameContext(DbContextOptions options) : base(options) { }
+    public PastriesContext(DbContextOptions options) : base(options) { }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

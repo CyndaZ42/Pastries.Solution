@@ -1,11 +1,11 @@
-namespace ProjectName.Models
+namespace Pastries.Models
 {
-  public class ClassOneClassTwo
+  public class FlavorTreat
   {
-    public int ClassOneClassTwoId { get; set; }
-    public int ClassOneId { get; set; }
-    public int ClassTwoId { get; set; }
-    public virtual ClassOne ClassOne { get; set; }
-    public virtual ClassTwo ClassTwo { get; set; }
+    public int FlavorTreatId { get; set; }
+    public int FlavorId { get; set; }
+    public int TreatId { get; set; }
+    public virtual Flavor Flavor { get; set; }
+    public virtual Treat Treat { get; set; }
   }
 }

@@ -1,24 +1,24 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
-using ProjectName.Models;
+using Pastries.Models;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ProjectName.Controllers
+namespace Pastries.Controllers
 {
-  public class ClassTwoController : Controller
+  public class TreatController : Controller
   {
-    private readonly ProjectNameContext _db;
+    private readonly PastriesContext _db;
 
-    public ClassTwoController(ProjectNameContext db)
+    public TreatController(PastriesContext db)
     {
       _db = db;
     }
 
     public ActionResult Index()
     {
-      return View(_db.ClassTwos.ToList());
+      return View(_db.Treats.ToList());
     }
   }
 }

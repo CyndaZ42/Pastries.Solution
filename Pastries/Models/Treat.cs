@@ -1,16 +1,16 @@
 using System.Collections.Generic;
 
-namespace ProjectName.Models
+namespace Pastries.Models
 {
-  public class ClassTwo
+  public class Treat
   {
-    public ClassTwo()
+    public Treat()
     {
-      this.JoinEntities = new HashSet<ClassOneClassTwo>();
+      this.JoinEntities = new HashSet<FlavorTreat>();
     }
 
-    public int ClassTwoId { get; set; }
-    public string ClassTwoName { get; set; }
-    public virtual ICollection<ClassOneClassTwo> JoinEntities { get; set; }
+    public int TreatId { get; set; }
+    public string TreatName { get; set; }
+    public virtual ICollection<FlavorTreat> JoinEntities { get; set; }
   }
 }
