@@ -2,7 +2,8 @@
   Layout="_Layout";
 }
 
-<h1>Welcome to Project Name</h1>
+<h1>Welcome to Pierre's Pastries</h1>
 
-<p class="btn btn-primary">@Html.ActionLink("A to an index page", "Index", "Category")</p>
-<p class="btn btn-primary">@Html.ActionLink("A to an index page", "Index", "Item")
+<a href="@Url.Action("Index", "Flavor")" class="btn btn-secondary">Pick a flavor</a>
+<a href="@Url.Action("Index", "Treat")" class="btn btn-secondary">Pick a treat</a>
+
