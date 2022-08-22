@@ -2,11 +2,11 @@
   Layout ="_Layout";
 }
 
-@model Pastries.Models.Treat
+@model Pastries.Models.Treat;
 
 <h1>Treat Details</h1>
 
-<h2>@Html.DisplayNameFor(model => model.TreatName): @Html.DisplayFor(model => model.TreatName)</h2>
+<h2>Treat: @Html.DisplayFor(model => model.TreatName)</h2>
 
 @if(@Model.JoinEntities.Count == 0)
 {
@@ -14,7 +14,7 @@
 }
 else
 {
-  <h4>Treats with this treat:</h4>
+  <h4>Tastes like...</h4>
   <ul>
   @foreach(var join in Model.JoinEntities)
   {
@@ -24,5 +24,6 @@ else
 }
 
 <p>@Html.ActionLink("Back to treats", "Index")</p>
+<p>@Html.ActionLink("Add a flavor", "AddFlavor", new { id = Model.TreatId})  </p>
 <p>@Html.ActionLink("Edit Treat", "Edit", new { id = Model.TreatId })</p>
 <p>@Html.ActionLink("Delete Treat", "Delete", new { id = Model.TreatId })</p>
