@@ -1,3 +1,14 @@
 @{
   Layout ="_Layout";
 }
+
+@model Pastries.Models.Treat
+
+<h2>Add a new treat</h2>
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.TreatName)
+  @Html.TextBoxFor(model => model.TreatName)
+  <input type="submit" value="Add new treat" />
+}
+<p>@Html.ActionLink("Show all treats", "Index")</p>
