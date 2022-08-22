@@ -4,18 +4,26 @@ using Microsoft.AspNetCore.Mvc;
 using Pastries.Models;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using System.Threading.Tasks;
+using System.Security.Claims;
 
 namespace Pastries.Controllers
 {
+  [Authorize]
   public class FlavorController : Controller
   {
     private readonly PastriesContext _db;
+    private readonly UserManager<ApplicationUser> _userManager;
 
-    public FlavorController(PastriesContext db)
+    public FlavorController(UserManager<ApplicationUser> userManager, PastriesContext db)
     {
+      _userManager = userManager;
       _db = db;
     }
 
+    [AllowAnonymous]
     public ActionResult Index()
     {
       return View(_db.Flavors.ToList());
@@ -28,8 +36,11 @@ namespace Pastries.Controllers
     }
 
     [HttpPost]
-    public ActionResult Create(Flavor flavor, int TreatId)
+    public  async Task<ActionResult> Create(Flavor flavor, int TreatId)
     {
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
+      flavor.User = currentUser;
       _db.Flavors.Add(flavor);
       _db.SaveChanges();
       if (TreatId != 0)
@@ -40,6 +51,7 @@ namespace Pastries.Controllers
       return RedirectToAction("Index");
     }
 
+    [AllowAnonymous]
     public ActionResult Details(int id)
     {
       var thisFlavor = _db.Flavors

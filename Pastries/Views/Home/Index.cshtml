@@ -2,7 +2,19 @@
   Layout="_Layout";
 }
 
+@using System.Security.Claims
+
 <h1>Welcome to Pierre's Pastries</h1>
+
+@if (User.Identity.IsAuthenticated)
+{
+  <a href="@Url.Action("Index", "Account")" class="btn btn-secondary">Your Account</a>
+}
+else
+{
+  <p>@Html.ActionLink("Register", "Register", "Account")</p>
+  <p>@Html.ActionLink("Log in", "Login", "Account")</p>
+}
 
 <a href="@Url.Action("Index", "Flavor")" class="btn btn-secondary">Pick a flavor</a>
 <a href="@Url.Action("Index", "Treat")" class="btn btn-secondary">Pick a treat</a>
